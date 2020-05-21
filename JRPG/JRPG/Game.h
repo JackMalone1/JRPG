@@ -10,11 +10,14 @@
 #include "MainMenuState.h"
 #include "WorldMap.h"
 #include "entt.hpp"
+#include <imgui.h>
+#include <imgui-SFML.h>
 
 class Game
 {
 public:
 	Game();
+	~Game();
 	void run();
 private:
 	void processEvents();

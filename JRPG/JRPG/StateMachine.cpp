@@ -33,7 +33,7 @@ void StateMachine::changeState(std::string stateName, std::shared_ptr<Action> ac
 {
 	currentState->onExit();
 	currentState = states[stateName];
-	currentState->onEnter(mapName);
+	currentState->onEnter(action);
 }
 
 void StateMachine::addState(std::string stateName, std::shared_ptr<IState> state)

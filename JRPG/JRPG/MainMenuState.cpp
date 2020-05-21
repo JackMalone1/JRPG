@@ -20,11 +20,19 @@ MainMenuState::MainMenuState(StateMachine& stateMachine) : m_stateMachine{stateM
 
 void MainMenuState::update(float dt)
 {
+	ImGui::SFML::SetActiveJoystickId(0);
+	ImGui::SetNextWindowFocus();
+	ImGui::Begin("Main menu"); // begin window
+	if (ImGui::Button("local map")) {
+		m_stateMachine.changeState("localmap");
+	}
+	ImGui::End(); // end window
 }
 
 void MainMenuState::render(sf::RenderWindow& window)
 {
 	window.draw(map);
+	ImGui::SFML::Render(window);
 }
 
 void MainMenuState::onEnter()

@@ -22,6 +22,7 @@ public:
 	virtual void onEnter() override;
 	virtual void onEnter(std::string mapName) override;
 	virtual void onEnter(std::vector<std::shared_ptr<Entity>> t_entities) override;
+	virtual void onEnter(std::shared_ptr<Action>) override {};
 	virtual void onExit() override;
 	static bool sortByTime(std::shared_ptr<Action> a, std::shared_ptr<Action> b);
 };

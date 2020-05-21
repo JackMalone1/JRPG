@@ -12,6 +12,7 @@ public:
 	virtual void onEnter() override;
 	virtual void onEnter(std::string mapName) override;
 	virtual void onEnter(std::vector<std::shared_ptr<Entity>>) override;
+	virtual void onEnter(std::shared_ptr<Action>) override {};
 	virtual void onExit() override;
 };
 
