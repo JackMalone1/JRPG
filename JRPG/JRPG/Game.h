@@ -9,7 +9,7 @@
 #include "LocalMap.h"
 #include "MainMenuState.h"
 #include "WorldMap.h"
-#include "StateStack.h"
+#include "entt.hpp"
 
 class Game
 {
@@ -27,5 +27,4 @@ private:
 	sf::Font m_font;
 	Gamepad gamepad;
 	StateMachine stateMachine;
-	StateStack stateStack;
 };

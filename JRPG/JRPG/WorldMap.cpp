@@ -24,6 +24,10 @@ void WorldMap::onEnter(std::string mapName)
 {
 }
 
+void WorldMap::onEnter(std::vector<std::shared_ptr<Entity>>)
+{
+}
+
 void WorldMap::onExit()
 {
 

@@ -19,6 +19,17 @@
 /// C00236428
 /// </summary>
 
+extern "C"
+{
+#include "lua/include/lua.h"
+#include "lua/include/lauxlib.h"
+#include "lua/include/lualib.h"
+}
+
+#ifdef _WIN32
+#pragma comment(lib, "lua/liblua53.a")
+#endif
+
 #include "Game.h"
 
 int main()

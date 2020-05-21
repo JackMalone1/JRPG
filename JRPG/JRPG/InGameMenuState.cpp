@@ -24,6 +24,10 @@ void InGameMenuState::onEnter(std::string mapName)
 {
 }
 
+void InGameMenuState::onEnter(std::vector<std::shared_ptr<Entity>>)
+{
+}
+
 void InGameMenuState::onExit()
 {
 

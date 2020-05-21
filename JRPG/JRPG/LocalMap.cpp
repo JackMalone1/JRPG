@@ -24,6 +24,10 @@ void LocalMap::onEnter(std::string mapName)
 {
 }
 
+void LocalMap::onEnter(std::vector<std::shared_ptr<Entity>>)
+{
+}
+
 void LocalMap::onExit()
 {
 

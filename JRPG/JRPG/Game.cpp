@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() : m_window{ sf::VideoMode{ 800, 800 }, "JRPG" }
+Game::Game() : m_window{ sf::VideoMode{ 512, 256 }, "JRPG" }
 {
 	gamepad.connect();
 	stateMachine.addState((std::string)"mainmenu", std::make_shared<MainMenuState>(stateMachine));
@@ -10,8 +10,6 @@ Game::Game() : m_window{ sf::VideoMode{ 800, 800 }, "JRPG" }
 	stateMachine.addState((std::string)"ingamemenu", std::make_shared<InGameMenuState>(stateMachine));
 
 	stateMachine.changeState("mainmenu");
-	stateStack.setMap(stateMachine.getMap());
-	stateStack.Push("mainmenu");
 }
 
 void Game::run()
