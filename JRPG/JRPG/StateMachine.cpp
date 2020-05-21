@@ -29,6 +29,13 @@ void StateMachine::changeState(std::string stateName, std::string mapName)
 	currentState->onEnter(mapName);
 }
 
+void StateMachine::changeState(std::string stateName, std::shared_ptr<Action> action)
+{
+	currentState->onExit();
+	currentState = states[stateName];
+	currentState->onEnter(mapName);
+}
+
 void StateMachine::addState(std::string stateName, std::shared_ptr<IState> state)
 {
 	states[stateName] = state;

@@ -15,6 +15,7 @@ public:
 	void render(sf::RenderWindow& window);
 	void changeState(std::string stateName);
 	void changeState(std::string stateName, std::string mapName);
+	void changeState(std::string stateName, std::shared_ptr<Action> action);
 	void addState(std::string stateName, std::shared_ptr<IState> state);
 	std::map<std::string, std::shared_ptr<IState>> getMap() { return states; }
 };

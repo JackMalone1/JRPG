@@ -7,6 +7,7 @@
 #include "Entity.h"
 #include "BattleExecute.h"
 #include "BattleTick.h"
+#include <algorithm>
 
 class BattleState :
 	public IState

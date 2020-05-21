@@ -9,12 +9,12 @@ BattleState::BattleState(StateMachine stateMachine)
 
 void BattleState::update(float dt)
 {
-
+	m_stateMachine.update(dt);
 }
 
 void BattleState::render(sf::RenderWindow& window)
 {
-
+	m_stateMachine.render(window);
 }
 
 void BattleState::onEnter()
@@ -33,13 +33,29 @@ void BattleState::onEnter(std::vector<std::shared_ptr<Entity>> t_entities)
 
 	entities = t_entities;
 
+	if (t_entities.empty())
+	{
+		return;
+	}
+
 	for (std::shared_ptr<Entity>& e : entities)
 	{
-		if (e->playerControlled())
-		{
+		actions.push_back(e->getAction());
+	}
 
+	if (actions.size() > 0)
+	{
+		for (int i = 0; i < actions.size() - 2; i++)
+		{
+			if (sortByTime(actions.at(i), actions.at(i + 1)))
+			{
+				std::shared_ptr<Action> temp = actions.at(i);
+				actions.at(i) = actions.at(i + 1);
+				actions.at(i + 1) = temp;
+			}
 		}
 	}
+	
 }
 
 void BattleState::onExit()
